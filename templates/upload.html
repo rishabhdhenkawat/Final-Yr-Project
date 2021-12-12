@@ -1,0 +1,131 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UNDERWATER IMAGE ENHANCEMENT</title>
+        <style>
+            *{
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;
+                font-family: montserrat;
+            }
+            body{
+                background-image: url("https://ak.picdn.net/shutterstock/videos/1007844496/thumb/12.jpg");
+            	background-repeat: no-repeat, repeat;
+		background-size: cover;
+			
+		}
+            .container{
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 85%;
+                height: 70%;
+                background-color: #242e4c;
+		background-image: url("https://ak.picdn.net/shutterstock/videos/1007844496/thumb/12.jpg");
+
+            	background-repeat: no-repeat, repeat;
+		background-size: cover;
+                border-radius: 15px;
+                opacity: 0.95;
+                color: #eaeaf1;
+                padding: 80px 20px;
+            }
+            .container span{
+                position: fixed;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 26px;
+            }
+            form{
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .file{
+                position: relative;
+                left: 60%;
+                transform: translateX(-50%);
+                margin-bottom: 20px;
+                margin-top: 180px;
+                font-size: 18px;
+            }
+            img{
+                width: auto;
+                height: 130px;
+                position: fixed;
+                top: 150px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            .submit{
+                opacity: 0;
+                width: 0.1px;
+                height: 0.1px;
+                position: absolute;
+            }
+            .buttoncontainer label{
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+                position: relative;
+                width: 120px;
+                height: 40px;
+                border-radius: 25px;
+                background-image: linear-gradient(40deg, #3863ff, #2968f0);
+                box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-weight: bold;
+                cursor: pointer;
+                transition: transform .2s ease-out;
+            }
+            .buttoncontainer label:hover{
+                background: #ad00cc;
+            }
+            .header {
+                text-align: center;
+                padding: 15px;
+                font-weight: bold;
+            }
+            .footer {
+                width: 100%;
+                padding: 15px;
+                text-align: center;
+                bottom: 0;
+                position: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1 style="color: #242e4c; font-size: 40px;">UNDERWATER IMAGE ENHANCEMENT</h1>
+		<h2 style="color: #242e4c; font-size: 25px;">for Proper Visual Perception</h2>
+        </div>
+        <div class="container">
+            <span>Upload Files</span>
+            <img src="data:image/png;base64,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">
+                <form method="POST" action="/next" enctype="multipart/form-data" class="form">
+                    <div class="file-input">
+                        <input type="file" name="file" autocomplete="off" required class="file" id="file">
+                    </div>
+                    <div class="buttoncontainer">
+                        <input type="submit" class= "submit" id="submit" value="SUBMIT">
+                        <label for="submit">Submit</label>
+                    </div>
+                </form>
+        </div>
+        <div class="footer">
+            <marquee><h1 style="color: #aad2ff;">By: Tushar Chauhan (18BCS6162), Saksham Bahuguna (18BCS6164), Mohit Melwani (18BCS6209)</h1></marquee>
+        </div>
+    </body>
+</html>
